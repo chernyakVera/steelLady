@@ -1,33 +1,43 @@
 <?php
+/**
+ * Автор: Черняк Вера
+ *
+ * Дата реализации: 07.11.2022 18:50
+ *
+ * Дата изменения: 23.01.2023 13:20
+ *
+ * Файл для подключения классов и работы с их объектами.
+ */
 
 require __DIR__ . '/User.php';
 require __DIR__ . '/ActionsWithUsers.php';
 
-$user = new User(
-    null,
-    'Name4',
-    'Surname4',
-    '1960-03-03',
-    '1',
-    'Town4'
-);
+//$user = new User(
+//    null,
+//    'Name5',
+//    'Surname5',
+//    '1987-10-02',
+//    '1',
+//    'Town5'
+//);
 
 
-$user = new User(
-    1
-);
+//$user = new User(2);
+//echo $usersAge = User::countOfAge($user->getDateOfBirth());
+//echo $usersGender = User::genderNumberToValue($user->getGender());
+//
+//
+//$user->deleteUser();
 
-echo $usersAge = User::countOfAge($user->getDateOfBirth());
-
-echo $usersGender = User::genderNumberToValue($user->getGender());
 
 $actions = new ActionsWithUsers(
-    'id',
+    'dateOfBirth',
     '>',
-    '2'
+    '1960-01-02'
 );
-
 $users = $actions->getUsers();
-
-$actions->deleteUsers($users);
+//
+//
+//
+//$actions->deleteUsers($users);
 
